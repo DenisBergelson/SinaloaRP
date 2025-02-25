@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>My Website</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -9,22 +10,24 @@
         <div class="div1"></div>
         <p>Sinaloa</p>
     </header>
+    
     <div class="div2">
-        <div class="div3">
-            <a href="map.html">
-                    Map
-            </a>
+        <div class="div3" onclick="openTab('map.html')">
+            <a class="back" href="map.html">Map</a>
         </div>
-        <div class="div4">
-            <a href="plans.html">
-                Heist Plans
-        </a>
+        <div class="div4" onclick="openTab('plans.html')">
+            <a href="plans.html">Heist Plans</a>
         </div>
-        <div class="div5">
-            <a href="gang_members.html">
-                Gang Members
-        </a>
+        <div class="div5" onclick="openTab('gang_members.html')">
+            <a href="gang_members.html">Gang Members</a>
         </div>
     </div>
+    
+    <!-- JavaScript for Navigation -->
+    <script>
+        function openTab(url) {
+            window.location.href = url;
+        }
+    </script>
 </body>
 </html>
