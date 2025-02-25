@@ -20,34 +20,36 @@
         <div id="videoModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
-                <video controls id="videoPlayer">
-                    <source src="" type="video/mp4">
-                    הדפדפן שלך לא תומך בניגון סרטונים.
-                </video>
+                <iframe id="videoPlayer" width="100%" height="480" 
+                    src="" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
             </div>
         </div>
-    <div class="plans_div1" onclick="openModal('heist_plan1.mp4')">
-        <a href="">
+        <div class="plans_div1" onclick="openModal('ZwwRr40gDx4')">
+            <a href="#">
                 #1
-        </a>
-    </div>
+            </a>
+        </div>
 
     
-    <div class="plans_div2" onclick="openModal('heist_plan2.mp4')">
+    <div class="plans_div2" onclick="openModal('cenDk0A0Soc')">
         <a href="">
                 #2
         </a>
     </div>
 
 
-    <div class="plans_div3" onclick="openModal('heist_plan3.mp4') ">
+    <div class="plans_div3" onclick="openModal('oNO0Ye46idM') ">
         <a href="">
                 #3
         </a>
     </div>
 
 
-    <div class="plans_div4" onclick="openModal('heist_plan4.mp4') ">
+    <div class="plans_div4" onclick="openModal('h7bdxPVmI4I') ">
         <a href="">
                 #4
         </a>
@@ -62,18 +64,15 @@
 <script>
 function openModal(videoSrc) {
     event.preventDefault();
-    var video = document.getElementById("videoPlayer");
-    var source = video.querySelector("source");
-    source.src = "videos/" + videoSrc; // מעדכן את הנתיב של הסרטון
-    video.load(); // טוען את הסרטון החדש
+    var iframe = document.getElementById("videoPlayer");
+    iframe.src = "https://www.youtube.com/embed/" + videoSrc;
     document.getElementById("videoModal").style.display = "flex";
 }
 
 function closeModal() {
-    var video = document.getElementById("videoPlayer");
+    var iframe = document.getElementById("videoPlayer");
     document.getElementById("videoModal").style.display = "none";
-    video.pause();
-    video.currentTime = 0;
+    iframe.src = ""; // כדי להפסיק את הסרטון
 }
 </script>
 </body>
