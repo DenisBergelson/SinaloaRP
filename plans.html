@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="div1"></div>
+        <p>Sinaloa</p>
+        <a href="index.html">
+            Home
+         </a>
+         
+        
+    </header>
+    
+    <div class = "plans_row">
+        <div id="videoModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <video controls id="videoPlayer">
+                    <source src="" type="video/mp4">
+                    הדפדפן שלך לא תומך בניגון סרטונים.
+                </video>
+            </div>
+        </div>
+    <div class="plans_div1" onclick="openModal('heist_plan1.mp4')">
+        <a href="">
+                #1
+        </a>
+    </div>
+
+    
+    <div class="plans_div2" onclick="openModal('heist_plan2.mp4')">
+        <a href="">
+                #2
+        </a>
+    </div>
+
+
+    <div class="plans_div3" onclick="openModal('heist_plan3.mp4') ">
+        <a href="">
+                #3
+        </a>
+    </div>
+
+
+    <div class="plans_div4" onclick="openModal('heist_plan4.mp4') ">
+        <a href="">
+                #4
+        </a>
+    </div>
+</div>
+
+
+
+
+
+
+<script>
+function openModal(videoSrc) {
+    event.preventDefault();
+    var video = document.getElementById("videoPlayer");
+    var source = video.querySelector("source");
+    source.src = "videos/" + videoSrc; // מעדכן את הנתיב של הסרטון
+    video.load(); // טוען את הסרטון החדש
+    document.getElementById("videoModal").style.display = "flex";
+}
+
+function closeModal() {
+    var video = document.getElementById("videoPlayer");
+    document.getElementById("videoModal").style.display = "none";
+    video.pause();
+    video.currentTime = 0;
+}
+</script>
+</body>
+</html>
