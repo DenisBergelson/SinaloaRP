@@ -1,11 +1,13 @@
 /* --- General Styles --- */
+
 body {
     font-family: Arial, sans-serif;
     background-color: rgb(90, 99, 50);
     margin: 0;
     padding: 0;
     height: 100vh;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -30,6 +32,8 @@ a:hover {
 
 /* --- Header Styles --- */
 header {
+    display: flex;
+    justify-content: space-between;
     color: rgb(255, 253, 127);
     font-size: 5.8em;
     font-weight: bold;
@@ -38,42 +42,45 @@ header {
     width: 100%;
     background-image: linear-gradient(rgb(243, 215, 57), rgb(0, 0, 0));
     border-bottom: 5px solid rgb(0, 0, 0);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    box-sizing: border-box;
 }
 /* --- Header Home Style --- */
+/* --- Back Button --- */
 header a {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 800;
-  font-size: 3.5vw;
-  text-transform: uppercase;
-  text-shadow: 1px 23px 4px rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px; /* הקטנת הפדינג */
+    color: rgb(255, 255, 255);
+    background-color: rgb(46, 38, 14); /* צבע זהב */
+    margin-top: 5%;
+    margin-right: 6%;
+    border-radius: 20px; /* פינות מעוגלות עדינות */
+    font-size: 20px; /* הקטנת גודל הטקסט */
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-width: 70px; /* גודל מינימלי */
+    height: 35px; /* גובה קבוע */
+    line-height: 1; /* יישור טקסט במרכז */
 }
 header p {
-    margin: 0;
+    margin-top: 3%;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
-
-/* --- Back Button --- */
-header a.back {
-    border: 6px solid rgb(255, 253, 127);
-    color: rgb(255, 255, 255);
-    font-size: 0.5em;
-}
-
 /* --- Main Page Layout --- */
 .div1 {
     height: 100%;
     width: 20%;
-    background: url('main_mexico.png') center no-repeat;
-    background-size: 65%;
 }
-
+.div1-images{
+    width: auto;
+    height: 97%;
+}
 .div2 {
   
     background-image: url('main_gold.jpg');
@@ -125,7 +132,7 @@ header a.back {
 
 .div5 {
     background-image: url('wip.png');
-    background-size: 60%;
+    background-size: 40%;
 }
 .div6 {
   
@@ -142,33 +149,33 @@ header a.back {
 /* --- Map Page --- */
 .map_body {
     background-color: rgb(90, 99, 50);
-    height: 120vh;
-    overflow-y: auto;
+    height: 100vh;
+    overflow-y:auto;
 }
 
 .map_div2 {
     width: 100%;
-    height: 100%;
-    border: 6px solid rgb(0, 0, 0);
+    height: 130%;
+    border: 5px solid rgb(0, 0, 0);
     background: url('world_map.png') center no-repeat;
-    background-size: contain;
+    background-size:cover;
 }
 
 /* --- Plans Page --- */
 .plans_row {
-    width: 100%;
-    height: 80%;
-    display: flex;
-    justify-content: left;
-    align-items: left;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 עמודות */
+    grid-auto-rows: 215px; /* גובה אחיד לכל ריבוע */
+    gap: 30px;
+    padding: 20px;
     background-color: rgb(18, 19, 5);
     border: 6px solid rgb(0, 0, 0);
-    box-sizing: border-box;
+    box-sizing:border-box;
 }
 
 .plans_div1, .plans_div2, .plans_div3, .plans_div4 {
-    width: 15%;
-    height: 20%;
+    width: 100%;
+    height:100%;
     margin-left: 10px;
     margin-top: 10px;
     border: 6px solid rgb(0, 0, 0);
@@ -186,7 +193,27 @@ header a.back {
         -1px  1px 0 rgb(0, 0, 0),
         1px  1px 0 rgb(0, 0, 0);
 }
-
+.plans_not_ready
+{
+    width: 100%;
+    height:100%;
+    margin-left: 10px;
+    margin-top: 10px;
+    border: 6px solid rgb(0, 0, 0);
+    border-radius: 4%;
+    background-color: rgb(90, 99, 50);
+    background-image: url('wip.png');
+    background-size: 40%;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: rgb(255, 253, 127);
+    text-shadow: 
+        -1px -1px 0 rgb(0, 0, 0),
+        1px -1px 0 rgb(0, 0, 0),
+        -1px  1px 0 rgb(0, 0, 0),
+        1px  1px 0 rgb(0, 0, 0);
+}
 .plans_div1:hover, 
 .plans_div2:hover, 
 .plans_div3:hover, 
