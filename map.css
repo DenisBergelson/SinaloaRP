@@ -1,0 +1,52 @@
+/* --- Main Page Layout --- */
+.index_body{
+    overflow: hidden;
+}
+.main_lower
+{
+    background-image: url('images/main_pattern2.png');
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 100%;
+}
+.div1 {
+    height: 100%;
+    width: 20%;
+}
+.div1-images{
+    width: auto;
+    height: 97%;
+}
+.div2 {
+    background-image: url('images/main_gold.jpg');
+    background-repeat:repeat;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    background-color: rgb(18, 19, 5);
+    border: 6px solid rgb(0, 0, 0);
+    box-sizing: border-box;
+}
+
+.div3:hover, .div4:hover /*,div5:hover*/{
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+/* --- Map Page --- */
+.map_body {
+    background-color: rgb(90, 99, 50);
+    background-image: url('images/main_pattern2.png');
+    height: 100vh;
+    overflow-y:auto;
+}
+
+.map_div2 {
+    width: 100%;
+    height: 100%;
+    border: 7px solid rgb(0, 0, 0);
+    background: url('images/world_map_new.png') center no-repeat;
+    background-size:contain;
+}
