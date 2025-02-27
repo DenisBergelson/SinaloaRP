@@ -172,7 +172,7 @@ header p {
 
 /* --- Plans Page --- */
 .plans_body{
-    overflow: hidden;
+    overflow: auto;
 }
 .plans_row {
     display: grid;
